@@ -1,0 +1,24 @@
+version: 0.1
+cli:
+  version: 1.8.1
+plugins:
+  sources:
+    - id: trunk
+      ref: v0.0.16
+      uri: https://github.com/trunk-io/plugins
+lint:
+  hold_the_line_mode: word
+  enabled:
+    - buildifier@6.1.0
+runtimes:
+  enabled:
+    - go@1.19.5
+    - node@18.12.1
+    - python@3.10.8
+actions:
+  disabled:
+    - trunk-announce
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
+  enabled:
+    - trunk-upgrade-available
